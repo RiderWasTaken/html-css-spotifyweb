@@ -5,15 +5,111 @@
 }
   
 .container {
-  width: 1200px;
+  width: 100vw;
   height: 100vh;
   margin: 0 auto;
   display: flex;
+  flex-wrap: wrap;
 }
   
 .row {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
+  width: 100%;
+  margin-top: 15px;
 }
   
+.song-container {
+  width: calc(100% / 6 - 20px);
+  margin: 10px;
+  cursor: pointer;
+}
+
+.song-container:hover .play-over, .song-body h3 {
+  opacity: 1;
+}
+
+.song-container:hover .song-head img {
+  opacity: 0.5;
+}
+
+.song-head {
+  position: relative;
+}
+
+.song-head img {
+  width: 100%;
+  display: block;
+}
+
+.song-head .play-over {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.song-head .play-over i {
+  color: #FFF;
+  font-size: 30px;
+}
+
+.song-body h3 {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.song-body .subtitle{
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+
+
+
+@media all and (max-width: 991px) {
+  .song-container {
+    width: calc(100% / 4 - 20px)
+  }
+}
+
+@media all and (max-width: 767px) {
+  .song-container {
+    width: calc(100% / 2 - 20px)
+  }
+}
+
+@media all and (max-width: 577px) {
+  .sb-container {
+    background-color: #000;
+    display: flex;
+    overflow: auto;
+    flex-direction: column;
+    width: 30px;
+    padding: 2px 5px;
+  }
+
+  .sb-container .xl {
+    display: none;
+  }
+
+  .sb-container .xs {
+    display: block;
+    width: 50%;
+  }
+
+}
+
+
+
+/* 
+SB width ~ 20-30px
+.container width calc(100 - whSB)
+.container min-width: 360px; */
